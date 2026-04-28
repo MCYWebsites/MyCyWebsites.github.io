@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LD Beauty Lab — Limassol | Hair, Skin &amp; Beauty Studio in Mesa Geitonia</title>
+<meta name="description" content="A modern beauty lab in Mesa Geitonia, Limassol — hair, skin and beauty services with a passion for getting it right. Book at +357 96 788 299.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --pink:#f7c7c4;
+    --pink-deep:#e89993;
+    --coral:#d96b65;
+    --charcoal:#1c1a1a;
+    --bone:#f8f4f0;
+    --warm:#fff9f6;
+    --ink:#181414;
+    --muted:#777070;
+    --line:#ece4dd;
+    --lime:#d4ea8a;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--warm);line-height:1.6}
+  h1,h2,h3,.display{font-family:'Syne',sans-serif;font-weight:700;letter-spacing:-0.025em}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";display:inline-block;width:8px;height:8px;background:var(--coral);border-radius:50%}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,249,246,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1200px;margin:0 auto}
+  .brand{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:8px}
+  .brand .dot{width:10px;height:10px;background:var(--coral);border-radius:50%}
+  .nav-links{display:flex;gap:32px;font-size:.88rem;font-weight:500}
+  .nav-links a:hover{color:var(--coral)}
+  .nav-cta{background:var(--ink);color:var(--bone);padding:11px 22px;border-radius:30px;font-size:.83rem;font-weight:600;transition:background .2s}
+  .nav-cta:hover{background:var(--coral)}
+  @media(max-width:780px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:80px 0 110px;position:relative;overflow:hidden}
+  .hero .container{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+  .hero h1{font-size:5rem;line-height:.98;letter-spacing:-0.04em;margin-bottom:30px;color:var(--ink)}
+  .hero h1 .pink{color:var(--coral)}
+  .hero h1 .underline{position:relative;display:inline-block}
+  .hero h1 .underline::after{content:"";position:absolute;bottom:6px;left:0;right:0;height:14px;background:var(--lime);z-index:-1;opacity:.7}
+  .hero p.lead{font-size:1.13rem;color:var(--muted);max-width:520px;margin-bottom:38px;line-height:1.7}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn-primary{background:var(--ink);color:var(--bone);padding:18px 30px;border-radius:30px;font-weight:600;font-size:.95rem;transition:transform .2s,background .2s;display:inline-flex;align-items:center;gap:10px}
+  .btn-primary:hover{background:var(--coral);transform:translateY(-2px)}
+  .btn-ghost{padding:18px 26px;font-weight:600;color:var(--ink);font-size:.95rem;border-radius:30px;border:2px solid var(--ink);transition:all .2s}
+  .btn-ghost:hover{background:var(--ink);color:var(--bone)}
+  .hero-stack{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+  .hero-circle{position:absolute;border-radius:50%}
+  .hero-circle.c1{width:100%;height:100%;background:var(--pink);top:0;left:0}
+  .hero-circle.c2{width:65%;height:65%;background:var(--coral);top:18%;left:18%}
+  .hero-circle.c3{width:38%;height:38%;background:var(--lime);top:32%;left:32%}
+  .hero-stack .label{position:absolute;font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;letter-spacing:-0.02em}
+  .hero-stack .l1{top:8%;left:5%;background:var(--ink);color:var(--bone);padding:8px 16px;border-radius:20px;font-size:.78rem}
+  .hero-stack .l2{bottom:12%;right:0%;background:var(--bone);color:var(--ink);padding:8px 16px;border-radius:20px;font-size:.78rem;border:2px solid var(--ink)}
+  .hero-stack .center-text{position:relative;z-index:5;text-align:center;color:var(--bone);font-family:'Syne',sans-serif;font-weight:800}
+  .hero-stack .center-text .ld{font-size:3.5rem;line-height:1}
+  .hero-stack .center-text .lab{font-size:.7rem;letter-spacing:.3em;margin-top:6px}
+  @media(max-width:880px){
+    .hero .container{grid-template-columns:1fr;gap:50px}
+    .hero h1{font-size:3rem}
+    .hero{padding:50px 0 70px}
+    .hero-stack{max-width:340px;margin:0 auto}
+  }
+
+  /* MARQUEE */
+  .marquee{background:var(--ink);color:var(--bone);padding:24px 0;overflow:hidden;border-top:2px solid var(--coral);border-bottom:2px solid var(--coral)}
+  .marquee-track{display:flex;gap:60px;white-space:nowrap;animation:scroll 30s linear infinite;font-family:'Syne',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:-0.02em}
+  .marquee-track span{display:flex;align-items:center;gap:60px}
+  .marquee-track .dot{color:var(--coral)}
+  @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+  /* SECTIONS */
+  section{padding:110px 0}
+  .section-header{margin-bottom:60px;max-width:680px}
+  .section-header h2{font-size:3.2rem;color:var(--ink);margin-bottom:18px;line-height:1.05;letter-spacing:-0.035em}
+  .section-header h2 em{color:var(--coral);font-style:normal}
+  .section-header p{color:var(--muted);font-size:1.05rem;line-height:1.7}
+
+  /* SERVICES */
+  .services{background:var(--bone)}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .service{background:var(--warm);padding:42px 32px;border-radius:24px;border:2px solid var(--ink);position:relative;transition:transform .25s}
+  .service:hover{transform:translateY(-6px)}
+  .service:nth-child(1){background:var(--pink)}
+  .service:nth-child(2){background:var(--lime)}
+  .service:nth-child(3){background:var(--warm)}
+  .service:nth-child(4){background:var(--warm)}
+  .service:nth-child(5){background:var(--pink)}
+  .service:nth-child(6){background:var(--lime)}
+  .service .num{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;letter-spacing:.1em;color:var(--ink);margin-bottom:18px}
+  .service h3{font-size:1.5rem;color:var(--ink);margin-bottom:12px;letter-spacing:-0.025em}
+  .service p{color:var(--ink);opacity:.78;font-size:.94rem;line-height:1.7}
+  @media(max-width:880px){.service-grid{grid-template-columns:1fr}}
+
+  /* MANIFESTO */
+  .manifesto{background:var(--coral);color:var(--bone)}
+  .manifesto .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .manifesto h2{font-size:3.5rem;color:var(--bone);line-height:1;letter-spacing:-0.04em;margin-bottom:24px}
+  .manifesto h2 em{color:var(--lime);font-style:normal}
+  .manifesto p{color:rgba(248,244,240,.92);font-size:1.08rem;line-height:1.8;margin-bottom:18px}
+  .checklist{list-style:none;margin-top:30px;display:grid;gap:16px}
+  .checklist li{padding-left:36px;position:relative;color:var(--bone);font-size:1rem;font-weight:500}
+  .checklist li::before{content:"✓";position:absolute;left:0;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:.85rem;top:-1px}
+  .manifesto .visual{aspect-ratio:1;background:var(--ink);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--bone);padding:40px;position:relative;max-width:380px;margin:0 auto;border:6px solid var(--lime)}
+  .manifesto .visual::before{content:"";position:absolute;inset:-20px;border:2px dashed var(--bone);border-radius:50%;opacity:.4}
+  .manifesto .visual .big{font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;line-height:1;color:var(--coral);letter-spacing:-0.04em}
+  .manifesto .visual .sm{margin-top:14px;font-family:'Syne',sans-serif;font-size:.78rem;letter-spacing:.3em}
+  @media(max-width:880px){.manifesto .container{grid-template-columns:1fr;gap:40px}.manifesto h2{font-size:2.4rem}}
+
+  /* CONTACT */
+  .contact{background:var(--bone)}
+  .contact .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .contact h2{font-size:3rem;color:var(--ink);line-height:1.05;letter-spacing:-0.035em;margin-bottom:24px}
+  .contact h2 em{color:var(--coral);font-style:normal}
+  .contact > .container > div:first-child > p{color:var(--muted);font-size:1.05rem;margin-bottom:36px;line-height:1.7}
+  .info-card{background:var(--warm);border:2px solid var(--ink);border-radius:18px;padding:28px 30px;margin-bottom:14px}
+  .info-card .l{font-family:'Syne',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.18em;color:var(--coral);margin-bottom:8px;text-transform:uppercase}
+  .info-card .v{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em}
+  .info-card a{color:var(--ink)}
+
+  .booking{background:var(--ink);color:var(--bone);padding:50px 40px;border-radius:24px;position:relative;overflow:hidden}
+  .booking::before{content:"";position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:var(--coral);border-radius:50%;opacity:.25}
+  .booking h3{font-family:'Syne',sans-serif;font-size:1.8rem;color:var(--bone);margin-bottom:14px;letter-spacing:-0.025em;position:relative}
+  .booking p{color:rgba(248,244,240,.7);margin-bottom:30px;position:relative;font-size:.95rem}
+  .b-action{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:rgba(255,255,255,.08);margin-bottom:10px;border-radius:30px;transition:all .2s;position:relative;border:1px solid transparent}
+  .b-action:hover{background:var(--coral);border-color:var(--coral)}
+  .b-action .lbl{font-weight:600;display:flex;align-items:center;gap:12px}
+  .b-action .ic{width:32px;height:32px;border-radius:50%;background:var(--coral);color:var(--bone);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800}
+  .b-action:hover .ic{background:var(--ink)}
+  .b-action .arr{font-family:'Syne',sans-serif;font-weight:800}
+  @media(max-width:880px){.contact .container{grid-template-columns:1fr;gap:40px}}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:var(--bone);padding:60px 0 30px;text-align:center;border-top:6px solid var(--coral)}
+  footer .brand-f{font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;letter-spacing:-0.04em;display:inline-flex;align-items:center;gap:12px}
+  footer .brand-f .dot{width:14px;height:14px;background:var(--coral);border-radius:50%}
+  footer .lines{margin-top:18px;color:rgba(248,244,240,.6);font-size:.88rem}
+  footer .lines a{color:var(--lime)}
+  .copy{margin-top:50px;padding-top:25px;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;opacity:.5}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-row">
+    <div class="brand">LD<span class="dot"></span>Beauty Lab</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#manifesto">Why LD</a>
+      <a href="#contact">Book</a>
+    </div>
+    <a href="tel:+35796788299" class="nav-cta">Book Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Beauty Lab · Mesa Geitonia · Limassol</div>
+      <h1>Hair. Skin. <span class="underline">Nails.</span><br>Done <span class="pink">properly.</span></h1>
+      <p class="lead">A modern beauty lab in Mesa Geitonia where the work matters more than the trend. Quality products, careful hands, and the kind of consistent results that turn first-timers into regulars.</p>
+      <div class="cta-row">
+        <a href="tel:+35796788299" class="btn-primary">Book a Slot →</a>
+        <a href="https://wa.me/35796788299" class="btn-ghost">WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-stack">
+      <div class="hero-circle c1"></div>
+      <div class="hero-circle c2"></div>
+      <div class="hero-circle c3"></div>
+      <div class="label l1">Open Tue–Sat</div>
+      <div class="label l2">Limassol 3096</div>
+      <div class="center-text">
+        <div class="ld">LD</div>
+        <div class="lab">Beauty Lab</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Hair Studio <em class="dot">•</em> Beauty Care <em class="dot">•</em> Skin Treatments <em class="dot">•</em> Nail Studio <em class="dot">•</em> Limassol <em class="dot">•</em></span>
+    <span>Hair Studio <em class="dot">•</em> Beauty Care <em class="dot">•</em> Skin Treatments <em class="dot">•</em> Nail Studio <em class="dot">•</em> Limassol <em class="dot">•</em></span>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">What We Do</div>
+      <h2>Six things. <em>Six things done well.</em></h2>
+      <p>We're not the lab that does everything. We're the lab that does the right things — and gets them right every time.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service">
+        <div class="num">01 / Hair</div>
+        <h3>Cut &amp; Style</h3>
+        <p>Considered cuts, blowouts, and styling for any occasion. We listen to what you actually want — then deliver it.</p>
+      </div>
+      <div class="service">
+        <div class="num">02 / Hair</div>
+        <h3>Colour &amp; Care</h3>
+        <p>Colour, highlights, balayage, and the deep care treatments that keep colour-treated hair looking its best.</p>
+      </div>
+      <div class="service">
+        <div class="num">03 / Skin</div>
+        <h3>Facial Care</h3>
+        <p>Cleansing, hydration, and renewal facials matched to your skin type. Quality products, no guesswork.</p>
+      </div>
+      <div class="service">
+        <div class="num">04 / Beauty</div>
+        <h3>Brows &amp; Lashes</h3>
+        <p>Brow shaping, lash treatments, tints — the small details that pull a whole look together.</p>
+      </div>
+      <div class="service">
+        <div class="num">05 / Nails</div>
+        <h3>Manicure &amp; Pedicure</h3>
+        <p>Clean, careful nail work that lasts — using brands and techniques we'd choose for ourselves.</p>
+      </div>
+      <div class="service">
+        <div class="num">06 / Studio</div>
+        <h3>Special Occasion</h3>
+        <p>Wedding day, celebration, or just a really important Friday — we'll plan a full session and make sure you leave camera-ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto" id="manifesto">
+  <div class="container">
+    <div>
+      <div class="eyebrow" style="color:var(--lime)">The LD Promise</div>
+      <h2>Outstanding service. <em>No shortcuts.</em></h2>
+      <p>LD Beauty Lab was built around one obsession — consistently delivering the kind of service we'd want for ourselves.</p>
+      <p>That means quality products, careful hands, full attention during your appointment, and a team that actually keeps learning.</p>
+      <ul class="checklist">
+        <li>Quality products only — no compromise on the brands we use</li>
+        <li>Real expertise — every team member trains continuously</li>
+        <li>Honest advice — we'll tell you what suits you, not what sells</li>
+        <li>Time to do it right — appointments are properly spaced</li>
+      </ul>
+    </div>
+    <div class="visual">
+      <div class="big">100%</div>
+      <div class="sm">Customer Satisfaction</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Visit the Lab</div>
+      <h2>Mesa Geitonia. <em>Walk in. Book ahead.</em></h2>
+      <p>We're inside the Alexandrou Business Centre on Omirou — easy parking, easy to find. A quick call ahead is always best.</p>
+
+      <div class="info-card">
+        <div class="l">Address</div>
+        <div class="v"><a href="https://www.google.com/maps/search/Spoil+Me+Hair+Beauty+Lab+Omirou+76+Mesa+Geitonia+Limassol" target="_blank">Omirou 76, Alexandrou Business Centre, Floor 3<br>Mesa Geitonia, Limassol 3096</a></div>
+      </div>
+      <div class="info-card">
+        <div class="l">Telephone</div>
+        <div class="v"><a href="tel:+35796788299">+357 96 788 299</a></div>
+      </div>
+      <div class="info-card">
+        <div class="l">Email</div>
+        <div class="v"><a href="mailto:liubcas@yahoo.com">liubcas@yahoo.com</a></div>
+      </div>
+    </div>
+
+    <div class="booking">
+      <h3>Book a Slot</h3>
+      <p>Tap a channel below — we reply within the day during salon hours.</p>
+
+      <a href="tel:+35796788299" class="b-action">
+        <span class="lbl"><span class="ic">☎</span> Call the Lab</span>
+        <span class="arr">→</span>
+      </a>
+      <a href="https://wa.me/35796788299" class="b-action">
+        <span class="lbl"><span class="ic">✆</span> WhatsApp</span>
+        <span class="arr">→</span>
+      </a>
+      <a href="mailto:liubcas@yahoo.com" class="b-action">
+        <span class="lbl"><span class="ic">@</span> Email Us</span>
+        <span class="arr">→</span>
+      </a>
+      <a href="https://www.google.com/maps/search/Spoil+Me+Hair+Beauty+Lab+Omirou+76+Mesa+Geitonia+Limassol" target="_blank" class="b-action">
+        <span class="lbl"><span class="ic">⊕</span> Get Directions</span>
+        <span class="arr">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="brand-f">LD<span class="dot"></span>Beauty Lab</div>
+    <div class="lines">Omirou 76, Mesa Geitonia, Limassol · <a href="tel:+35796788299">+357 96 788 299</a></div>
+    <div class="copy">© LD Beauty Lab (Spoil Me Hair &amp; Beauty Lab Ltd). Hair, skin, beauty — done properly, in Limassol.</div>
+  </div>
+</footer>
+
+</body>
+</html>
