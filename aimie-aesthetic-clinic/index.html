@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aimie aesthetic clinic — Limassol | Holistic Beauty on Makarios III</title>
+<meta name="description" content="A holistic aesthetic clinic on Makarios III, Limassol — skin and body analysis, signature non-invasive lipoplasty, cryotherapy, hair, and nails. Call +357 99 977 871.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --mint:#a8c4b3;
+    --mint-deep:#5e8773;
+    --moss:#3e5b4d;
+    --cream:#fbf8f3;
+    --shell:#f3ede2;
+    --ink:#1a2420;
+    --muted:#6b746f;
+    --line:#e6dfd1;
+    --accent:#d8a86b;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Manrope',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-0.01em}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--mint-deep);font-weight:600;margin-bottom:20px}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(251,248,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1180px;margin:0 auto}
+  .brand{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--moss);font-style:italic;font-weight:400}
+  .brand sup{font-size:.55rem;color:var(--accent);font-style:normal;letter-spacing:.3em;text-transform:uppercase;font-family:'Manrope',sans-serif;font-weight:600;margin-left:6px;top:-.7em}
+  .nav-links{display:flex;gap:34px;font-size:.88rem}
+  .nav-links a:hover{color:var(--mint-deep)}
+  .nav-cta{background:var(--moss);color:var(--cream);padding:11px 22px;border-radius:30px;font-size:.82rem;font-weight:500;letter-spacing:.04em;transition:background .25s}
+  .nav-cta:hover{background:var(--mint-deep)}
+  @media(max-width:780px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:160px 0 120px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:50%;right:-200px;transform:translateY(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(168,196,179,.25),transparent 65%);border-radius:50%}
+  .hero::after{content:"";position:absolute;bottom:-200px;left:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(216,168,107,.18),transparent 60%);border-radius:50%}
+  .hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+  .hero h1{font-size:4.5rem;line-height:1.05;color:var(--moss);margin-bottom:32px}
+  .hero h1 em{font-style:italic;color:var(--accent);font-weight:300}
+  .hero p.lead{font-size:1.13rem;color:var(--muted);max-width:520px;margin-bottom:42px;line-height:1.75}
+  .cta-row{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  .btn-primary{background:var(--moss);color:var(--cream);padding:18px 32px;border-radius:30px;font-weight:500;font-size:.92rem;transition:transform .2s,background .2s;display:inline-flex;align-items:center;gap:8px}
+  .btn-primary:hover{background:var(--mint-deep);transform:translateY(-1px)}
+  .btn-ghost{padding:18px 24px;font-weight:500;color:var(--moss);font-size:.92rem;border-radius:30px;border:1px solid var(--mint);transition:background .2s}
+  .btn-ghost:hover{background:var(--shell)}
+  .hero-card{aspect-ratio:4/5;background:linear-gradient(160deg,var(--mint) 0%,var(--moss) 100%);border-radius:24px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:36px}
+  .hero-card .top{font-family:'Fraunces',serif;font-style:italic;font-size:1.2rem;color:rgba(251,248,243,.85);line-height:1.4}
+  .hero-card .center{font-family:'Fraunces',serif;font-size:9rem;color:rgba(251,248,243,.18);line-height:1;text-align:center;font-style:italic;font-weight:300}
+  .hero-card .bot{display:flex;justify-content:space-between;align-items:flex-end;color:var(--cream);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+  .hero-card .seal{width:62px;height:62px;border-radius:50%;border:1px solid rgba(251,248,243,.4);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1rem;font-style:italic}
+  @media(max-width:880px){
+    .hero .container{grid-template-columns:1fr;gap:50px}
+    .hero h1{font-size:2.8rem}
+    .hero{padding:130px 0 80px}
+  }
+
+  /* SECTIONS */
+  section{padding:110px 0}
+  .section-header{text-align:center;max-width:680px;margin:0 auto 70px}
+  .section-header h2{font-size:3rem;color:var(--moss);margin-bottom:20px;line-height:1.15}
+  .section-header h2 em{font-style:italic;color:var(--accent);font-weight:300}
+  .section-header p{color:var(--muted);font-size:1.05rem;line-height:1.7}
+
+  /* APPROACH */
+  .approach{background:var(--shell)}
+  .approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:50px}
+  .a-step{background:var(--cream);padding:48px 36px;border-radius:20px;text-align:center;position:relative;border:1px solid var(--line);transition:transform .25s}
+  .a-step:hover{transform:translateY(-4px)}
+  .a-step .num{font-family:'Fraunces',serif;font-style:italic;color:var(--accent);font-size:1.6rem;margin-bottom:14px}
+  .a-step h3{font-size:1.4rem;color:var(--moss);margin-bottom:14px}
+  .a-step p{color:var(--muted);font-size:.94rem;line-height:1.7}
+  @media(max-width:880px){.approach-grid{grid-template-columns:1fr}}
+
+  /* SERVICES */
+  .services{background:var(--cream)}
+  .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .service{background:var(--cream);padding:42px 36px;border-radius:18px;border:1px solid var(--line);display:flex;gap:24px;align-items:flex-start;transition:all .25s}
+  .service:hover{border-color:var(--mint);background:var(--shell)}
+  .service-mark{flex:0 0 50px;width:50px;height:50px;border-radius:50%;background:var(--shell);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;color:var(--moss);font-style:italic;font-size:1.2rem}
+  .service h3{font-size:1.35rem;color:var(--moss);margin-bottom:10px}
+  .service p{color:var(--muted);font-size:.94rem;line-height:1.7}
+  @media(max-width:780px){.service-grid{grid-template-columns:1fr}}
+
+  /* PHILOSOPHY */
+  .philosophy{background:var(--moss);color:var(--cream)}
+  .philosophy .container{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+  .philosophy .badge{aspect-ratio:1;max-width:340px;margin:0 auto;border-radius:50%;border:1px solid rgba(168,196,179,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;background:radial-gradient(circle at 30% 30%,rgba(168,196,179,.15),transparent)}
+  .philosophy .badge .num{font-family:'Fraunces',serif;font-style:italic;font-size:5rem;color:var(--accent);line-height:1;font-weight:300}
+  .philosophy .badge .t{margin-top:12px;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:var(--mint);max-width:200px;line-height:1.5}
+  .philosophy h2{font-size:2.8rem;color:var(--cream);margin-bottom:24px;line-height:1.15}
+  .philosophy h2 em{font-style:italic;color:var(--accent);font-weight:300}
+  .philosophy p{color:rgba(251,248,243,.78);font-size:1.05rem;line-height:1.8;margin-bottom:18px}
+  @media(max-width:880px){.philosophy .container{grid-template-columns:1fr;gap:60px}}
+
+  /* CONTACT */
+  .contact{background:var(--shell)}
+  .contact .container{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+  .contact h2{font-size:2.8rem;color:var(--moss);margin-bottom:24px;line-height:1.15}
+  .contact h2 em{font-style:italic;color:var(--accent)}
+  .contact > .container > div:first-child > p{color:var(--muted);margin-bottom:38px;line-height:1.8}
+  .info{display:flex;flex-direction:column;gap:24px}
+  .info-block{padding:24px 28px;background:var(--cream);border-radius:14px;border:1px solid var(--line)}
+  .info-block .l{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--mint-deep);font-weight:600;margin-bottom:8px}
+  .info-block .v{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--moss)}
+  .info-block .v a{color:var(--moss)}
+  .actions{background:var(--cream);padding:48px 40px;border-radius:18px;border:1px solid var(--line)}
+  .actions h3{font-size:1.6rem;color:var(--moss);margin-bottom:14px;font-family:'Fraunces',serif}
+  .actions p.intro{color:var(--muted);font-size:.94rem;margin-bottom:30px;line-height:1.7}
+  .action-pill{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:var(--shell);margin-bottom:12px;border-radius:30px;transition:all .2s;border:1px solid transparent}
+  .action-pill:hover{background:var(--cream);border-color:var(--mint)}
+  .action-pill .lbl{font-weight:500;color:var(--ink);display:flex;align-items:center;gap:12px}
+  .action-pill .ic{width:28px;height:28px;background:var(--moss);color:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem}
+  .action-pill .arr{color:var(--mint-deep)}
+  @media(max-width:880px){.contact .container{grid-template-columns:1fr;gap:50px}}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:var(--cream);padding:70px 0 30px;text-align:center}
+  footer .brand-f{font-family:'Fraunces',serif;font-style:italic;font-size:2.4rem;color:var(--mint);margin-bottom:6px}
+  footer .lines{margin-top:18px;color:rgba(251,248,243,.6);font-size:.88rem}
+  footer .lines a{color:var(--mint)}
+  .copy{margin-top:50px;padding-top:25px;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;opacity:.5}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-row">
+    <div class="brand">aimie<sup>aesthetic clinic</sup></div>
+    <div class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#services">Treatments</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#contact">Visit</a>
+    </div>
+    <a href="tel:+35799977871" class="nav-cta">Book Visit</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Holistic Aesthetic Clinic · Limassol</div>
+      <h1>Your beauty, <em>understood</em> before it is treated.</h1>
+      <p class="lead">A clinic on Makarios III where every visit begins with a complete skin and body analysis — and every treatment is built around what your skin actually needs, not a generic menu.</p>
+      <div class="cta-row">
+        <a href="tel:+35799977871" class="btn-primary">Book a Free Beauty Plan →</a>
+        <a href="https://wa.me/35799977871" class="btn-ghost">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="top">"From diagnosing the cause<br>to caring for the whole."</div>
+      <div class="center">a</div>
+      <div class="bot">
+        <div>Limassol<br>Cyprus</div>
+        <div class="seal">aimie</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="approach" id="approach">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow" style="text-align:center">The aimie Approach</div>
+      <h2>Three steps to <em>real</em> results.</h2>
+      <p>We don't sell single treatments. We design beauty plans — and that starts with properly understanding what your skin and body need.</p>
+    </div>
+    <div class="approach-grid">
+      <div class="a-step">
+        <div class="num">i.</div>
+        <h3>Analyse</h3>
+        <p>A complete skin and body analysis to understand the actual cause of what you see — not just the surface.</p>
+      </div>
+      <div class="a-step">
+        <div class="num">ii.</div>
+        <h3>Plan</h3>
+        <p>A personalised beauty plan built around your skin type, lifestyle, goals, and budget. Honest, no exaggerations.</p>
+      </div>
+      <div class="a-step">
+        <div class="num">iii.</div>
+        <h3>Care</h3>
+        <p>Treatments delivered with care — and ongoing follow-up to make sure your results last.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow" style="text-align:center">Treatments</div>
+      <h2>Everything for skin, body, hair &amp; nails.</h2>
+      <p>A holistic clinic — meaning we look after you fully, in one place, by people who actually talk to one another.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service">
+        <div class="service-mark">a.</div>
+        <div>
+          <h3>Skin &amp; Body Analysis</h3>
+          <p>The foundation of every aimie visit — a thorough diagnostic look at what's really going on with your skin and body.</p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="service-mark">b.</div>
+        <div>
+          <h3>Signature Non-Invasive Lipoplasty</h3>
+          <p>Body shaping without surgery — aimie's signature non-invasive protocol for targeted fat reduction and contouring.</p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="service-mark">c.</div>
+        <div>
+          <h3>Cryotherapy</h3>
+          <p>Cold therapy for skin tightening, fat reduction, and a refreshed complexion — used as part of personalised plans.</p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="service-mark">d.</div>
+        <div>
+          <h3>Hair Removal</h3>
+          <p>Long-term hair removal protocols delivered by trained therapists. Comfortable, predictable, properly explained.</p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="service-mark">e.</div>
+        <div>
+          <h3>Hair Care</h3>
+          <p>Scalp diagnostics and hair care protocols — because beauty isn't only the face.</p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="service-mark">f.</div>
+        <div>
+          <h3>Nails</h3>
+          <p>Manicure and nail care from the same considered approach as the rest of the clinic.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <div class="badge">
+      <div class="num">∞</div>
+      <div class="t">Holistic care · No exaggerations</div>
+    </div>
+    <div>
+      <div class="eyebrow" style="color:var(--mint)">Our Philosophy</div>
+      <h2>Beauty without <em>exaggeration</em>.</h2>
+      <p>aimie believes your beauty is unique — and our role is to help you discover what suits you, with honesty and respect.</p>
+      <p>That means no upselling, no exaggerated promises, no rushed treatments. Just careful diagnosis, honest plans, and treatments delivered by people who care about your long-term outcome — not the next appointment.</p>
+      <p>It's a different kind of aesthetic clinic. One we built because we couldn't find one ourselves.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Find Us</div>
+      <h2>Visit aimie on <em>Makarios III</em>.</h2>
+      <p>The clinic sits on one of Limassol's main avenues — easy to find, easy to reach, and the start of a different kind of beauty experience.</p>
+
+      <div class="info">
+        <div class="info-block">
+          <div class="l">Address</div>
+          <div class="v"><a href="https://www.google.com/maps/search/aimie+aesthetic+clinic+Makarios+133+Limassol" target="_blank">Arch. Makarios III Avenue 133, 3021 Limassol</a></div>
+        </div>
+        <div class="info-block">
+          <div class="l">Telephone</div>
+          <div class="v"><a href="tel:+35799977871">+357 99 977 871</a></div>
+        </div>
+        <div class="info-block">
+          <div class="l">Instagram</div>
+          <div class="v"><a href="https://www.instagram.com/aimie.clinic/" target="_blank">@aimie.clinic</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <h3>Book your free beauty plan</h3>
+      <p class="intro">First step is always a proper conversation. Choose how you'd like to start:</p>
+
+      <a href="tel:+35799977871" class="action-pill">
+        <span class="lbl"><span class="ic">☎</span> Call the clinic</span>
+        <span class="arr">→</span>
+      </a>
+      <a href="https://wa.me/35799977871" class="action-pill">
+        <span class="lbl"><span class="ic">✆</span> WhatsApp</span>
+        <span class="arr">→</span>
+      </a>
+      <a href="https://www.instagram.com/aimie.clinic/" target="_blank" class="action-pill">
+        <span class="lbl"><span class="ic">@</span> Message on Instagram</span>
+        <span class="arr">→</span>
+      </a>
+      <a href="https://www.google.com/maps/search/aimie+aesthetic+clinic+Makarios+133+Limassol" target="_blank" class="action-pill">
+        <span class="lbl"><span class="ic">⊕</span> Get directions</span>
+        <span class="arr">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="brand-f">aimie</div>
+    <div style="font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent)">Aesthetic Clinic · Limassol</div>
+    <div class="lines">Arch. Makarios III Avenue 133 · <a href="tel:+35799977871">+357 99 977 871</a></div>
+    <div class="copy">© aimie aesthetic clinic. Holistic beauty, designed around you.</div>
+  </div>
+</footer>
+
+</body>
+</html>
