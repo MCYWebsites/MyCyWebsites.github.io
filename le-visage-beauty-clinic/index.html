@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Visage Beauty Clinic &amp; Spa — Limassol | Facial Aesthetics &amp; Wellness</title>
+<meta name="description" content="A boutique beauty clinic and spa in Limassol — facial care, body treatments, and gentle aesthetic medicine. Reserve at +357 97 879 486.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --rose:#c89797;
+    --rose-soft:#e8c8c4;
+    --gold:#c9a26b;
+    --ivory:#fbf6f1;
+    --pearl:#f5ebe2;
+    --ink:#2a1f20;
+    --muted:#7c6a6a;
+    --line:#ead8cd;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--ivory);line-height:1.65}
+  h1,h2,h3,.serif{font-family:'Playfair Display',serif;font-weight:400;letter-spacing:-0.005em}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.7rem;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:18px}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(251,246,241,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1180px;margin:0 auto}
+  .brand{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--ink);font-style:italic}
+  .brand span{font-size:.62rem;display:block;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-top:2px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-style:normal}
+  .nav-links{display:flex;gap:34px;font-size:.86rem;font-weight:600}
+  .nav-links a:hover{color:var(--rose)}
+  .nav-cta{background:transparent;color:var(--ink);padding:11px 24px;border:1px solid var(--gold);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;transition:all .25s}
+  .nav-cta:hover{background:var(--gold);color:var(--ivory)}
+  @media(max-width:780px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:160px 0 120px;position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ivory) 0%,var(--pearl) 100%)}
+  .hero::before{content:"";position:absolute;top:60px;right:-100px;width:480px;height:480px;background:radial-gradient(circle,rgba(232,200,196,.4),transparent 60%);border-radius:50%}
+  .hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
+  .hero h1{font-size:4.6rem;line-height:1.05;margin-bottom:30px;color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--rose);font-weight:400}
+  .hero p.lead{font-size:1.13rem;color:var(--muted);max-width:520px;margin-bottom:42px;line-height:1.75}
+  .cta-row{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  .btn-primary{background:var(--ink);color:var(--ivory);padding:18px 34px;font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;transition:background .2s}
+  .btn-primary:hover{background:var(--rose)}
+  .btn-ghost{padding:18px 24px;font-weight:700;color:var(--ink);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid var(--gold)}
+  .hero-art{aspect-ratio:3/4;background:linear-gradient(160deg,var(--rose-soft),var(--rose));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .hero-art::before{content:"";position:absolute;inset:24px;border:1px solid rgba(255,255,255,.5)}
+  .hero-art .mono{font-family:'Playfair Display',serif;font-style:italic;font-size:9rem;color:rgba(255,255,255,.85);line-height:1}
+  .hero-art .tag{position:absolute;bottom:30px;left:0;right:0;text-align:center;color:var(--ivory);letter-spacing:.4em;text-transform:uppercase;font-size:.7rem;opacity:.85}
+  @media(max-width:880px){
+    .hero .container{grid-template-columns:1fr;gap:50px}
+    .hero h1{font-size:2.7rem}
+    .hero{padding:130px 0 80px}
+  }
+
+  /* SECTIONS */
+  section{padding:110px 0}
+  .section-header{text-align:center;max-width:680px;margin:0 auto 70px}
+  .section-header h2{font-size:3rem;color:var(--ink);margin-bottom:20px;line-height:1.15}
+  .section-header h2 em{font-style:italic;color:var(--rose)}
+  .section-header p{color:var(--muted);font-size:1.05rem;line-height:1.7}
+  .ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px;color:var(--gold)}
+  .ornament::before,.ornament::after{content:"";width:30px;height:1px;background:var(--gold)}
+
+  /* SERVICES */
+  .services{background:#fff}
+  .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;border:1px solid var(--line);background:var(--line)}
+  .service{background:#fff;padding:50px 44px;transition:background .25s}
+  .service:hover{background:var(--ivory)}
+  .service-num{display:inline-block;font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:1.5rem;margin-bottom:18px}
+  .service h3{font-size:1.6rem;color:var(--ink);margin-bottom:14px}
+  .service p{color:var(--muted);font-size:.95rem;line-height:1.75}
+  @media(max-width:780px){.service-grid{grid-template-columns:1fr}}
+
+  /* RITUALS */
+  .rituals{background:var(--pearl)}
+  .ritual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px}
+  .ritual{background:var(--ivory);padding:42px 32px;text-align:center;border:1px solid var(--line)}
+  .ritual .icon{width:62px;height:62px;border-radius:50%;background:var(--rose-soft);margin:0 auto 22px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;color:var(--ink);font-size:1.4rem}
+  .ritual h3{font-size:1.25rem;color:var(--ink);margin-bottom:10px}
+  .ritual p{color:var(--muted);font-size:.92rem;line-height:1.7}
+  @media(max-width:880px){.ritual-grid{grid-template-columns:1fr;gap:20px}}
+
+  /* WELCOME */
+  .welcome{background:var(--ink);color:var(--ivory);text-align:center}
+  .welcome .container{max-width:780px}
+  .welcome h2{font-size:2.6rem;color:var(--ivory);margin-bottom:24px;line-height:1.2;font-style:italic}
+  .welcome h2 em{color:var(--rose);font-style:normal}
+  .welcome p{color:rgba(251,246,241,.8);font-size:1.1rem;line-height:1.85;margin-bottom:18px}
+  .welcome .signature{margin-top:50px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--rose)}
+  .welcome .signature small{display:block;font-family:'Nunito Sans',sans-serif;font-style:normal;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:8px}
+
+  /* CONTACT */
+  .contact{background:var(--ivory)}
+  .contact .container{display:grid;grid-template-columns:1.1fr .9fr;gap:80px}
+  .contact h2{font-size:2.8rem;color:var(--ink);margin-bottom:24px;line-height:1.15}
+  .contact h2 em{color:var(--rose);font-style:italic}
+  .contact-info p.intro{color:var(--muted);font-size:1.02rem;line-height:1.8;margin-bottom:36px}
+  .info-line{padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:140px 1fr;gap:24px;align-items:center}
+  .info-line:last-of-type{border:none}
+  .info-line .l{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .info-line .v{font-family:'Playfair Display',serif;font-size:1.3rem}
+  .info-line a:hover{color:var(--rose)}
+
+  .booking-box{background:#fff;padding:48px 40px;border:1px solid var(--line);position:relative}
+  .booking-box::before{content:"";position:absolute;inset:8px;border:1px solid var(--rose-soft);pointer-events:none}
+  .booking-box h3{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--ink);margin-bottom:14px;text-align:center;font-style:italic}
+  .booking-box .ornament{margin:0 auto 24px}
+  .booking-box p{text-align:center;color:var(--muted);font-size:.94rem;margin-bottom:28px;line-height:1.7}
+  .pill{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--ivory);margin-bottom:10px;transition:all .2s;border:1px solid transparent}
+  .pill:hover{border-color:var(--gold);background:#fff}
+  .pill .ic{width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--ivory);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex:0 0 32px}
+  .pill .t .lbl{display:block;font-weight:700;color:var(--ink);font-size:.95rem}
+  .pill .t .sm{font-size:.82rem;color:var(--muted);margin-top:1px}
+  @media(max-width:880px){.contact .container{grid-template-columns:1fr;gap:50px}}
+
+  /* FOOTER */
+  footer{background:var(--pearl);color:var(--ink);padding:60px 0 30px;text-align:center}
+  footer .brand-f{font-family:'Playfair Display',serif;font-style:italic;font-size:2rem;color:var(--ink)}
+  footer .brand-f span{display:block;font-family:'Nunito Sans',sans-serif;font-style:normal;font-size:.65rem;letter-spacing:.45em;color:var(--gold);font-weight:700;margin-top:8px}
+  footer .lines{margin-top:24px;color:var(--muted);font-size:.88rem}
+  footer .lines a:hover{color:var(--rose)}
+  .copy{margin-top:40px;padding-top:25px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-row">
+    <div class="brand">Le Visage<span>Beauty Clinic &amp; Spa</span></div>
+    <div class="nav-links">
+      <a href="#services">Treatments</a>
+      <a href="#rituals">Signature Rituals</a>
+      <a href="#welcome">About</a>
+      <a href="#contact">Reserve</a>
+    </div>
+    <a href="tel:+35797879486" class="nav-cta">Reserve</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Beauty Clinic &amp; Spa · Limassol</div>
+      <h1>Care for the face — and the moments around <em>it</em>.</h1>
+      <p class="lead">A boutique clinic and spa in Limassol, where considered facial care, body rituals, and gentle aesthetic treatments are delivered slowly, properly, and only by the people who've trained to do them well.</p>
+      <div class="cta-row">
+        <a href="tel:+35797879486" class="btn-primary">Reserve a Treatment</a>
+        <a href="https://wa.me/35797879486" class="btn-ghost">WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="mono">L</div>
+      <div class="tag">Le Visage · Limassol</div>
+    </div>
+  </div>
+</header>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="ornament">·</div>
+      <div class="eyebrow" style="text-align:center">Our Treatments</div>
+      <h2>The art of looking after the <em>face</em>.</h2>
+      <p>Treatments are matched to your skin and your day — never to a fixed menu. Every session begins with a quiet conversation.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service">
+        <div class="service-num">i.</div>
+        <h3>Signature Facials</h3>
+        <p>Deep cleansing, hydration, and skin-renewal facials performed by hand — the kind that leave your skin visibly calmer for days afterwards.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">ii.</div>
+        <h3>Aesthetic Care</h3>
+        <p>Subtle, considered aesthetic treatments — never overdone, always honest. We'll only suggest what truly suits you.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">iii.</div>
+        <h3>Body Rituals</h3>
+        <p>Therapeutic body treatments and massage — for those moments when looking after the face means looking after everything else, too.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">iv.</div>
+        <h3>Skin Diagnostics</h3>
+        <p>Skin analysis sessions designed to understand the cause of what you see — so the treatment plan addresses it, not just the surface.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rituals" id="rituals">
+  <div class="container">
+    <div class="section-header">
+      <div class="ornament">·</div>
+      <div class="eyebrow" style="text-align:center">Signature Rituals</div>
+      <h2>Three rituals our regulars return for.</h2>
+    </div>
+    <div class="ritual-grid">
+      <div class="ritual">
+        <div class="icon">i</div>
+        <h3>The Bright Hour</h3>
+        <p>Our brightening facial — a one-hour ritual to revive a tired, dull complexion before an event, holiday, or simply for yourself.</p>
+      </div>
+      <div class="ritual">
+        <div class="icon">ii</div>
+        <h3>The Calm Hour</h3>
+        <p>A quiet, restorative facial for sensitive or stressed skin — gentle hands, cool products, and an unhurried pace.</p>
+      </div>
+      <div class="ritual">
+        <div class="icon">iii</div>
+        <h3>The Renewal</h3>
+        <p>An extended ritual combining face, neck and décolletage — designed for visible, lasting renewal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="welcome" id="welcome">
+  <div class="container">
+    <div class="ornament" style="color:var(--rose)">·</div>
+    <div class="eyebrow" style="text-align:center;color:var(--gold)">Welcome to Le Visage</div>
+    <h2>A small clinic, looked after with <em>care</em>.</h2>
+    <p>Le Visage is built on a simple idea — that face care is personal, and personal care can't be rushed.</p>
+    <p>That's why our treatment rooms stay quiet, our diary stays generous, and every visit is treated as the visit of a regular — even if it's your first time.</p>
+    <div class="signature">— Le Visage<small>Beauty Clinic &amp; Spa, Limassol</small></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-info">
+      <div class="ornament">·</div>
+      <div class="eyebrow">Reserve</div>
+      <h2>Plan your <em>visit</em>.</h2>
+      <p class="intro">We answer every call and message ourselves. No bots, no booking forms — just a direct line to the clinic so we can find a time that genuinely suits you.</p>
+
+      <div class="info-line">
+        <div class="l">Telephone</div>
+        <div class="v"><a href="tel:+35797879486">+357 97 879 486</a></div>
+      </div>
+      <div class="info-line">
+        <div class="l">WhatsApp</div>
+        <div class="v"><a href="https://wa.me/35797879486">+357 97 879 486</a></div>
+      </div>
+      <div class="info-line">
+        <div class="l">Instagram</div>
+        <div class="v"><a href="https://www.instagram.com/levisage_beautyclinic/" target="_blank">@levisage_beautyclinic</a></div>
+      </div>
+      <div class="info-line">
+        <div class="l">Location</div>
+        <div class="v"><a href="https://www.google.com/maps/search/Le+Visage+Beauty+Clinic+Spa+Limassol" target="_blank">Limassol, Cyprus</a></div>
+      </div>
+    </div>
+
+    <div class="booking-box">
+      <h3>Reserve a Treatment</h3>
+      <div class="ornament">·</div>
+      <p>Choose how you'd like to reach us. We aim to reply within the day.</p>
+
+      <a href="tel:+35797879486" class="pill">
+        <div class="ic">☎</div>
+        <div class="t"><span class="lbl">Call the clinic</span><span class="sm">+357 97 879 486</span></div>
+      </a>
+      <a href="https://wa.me/35797879486" class="pill">
+        <div class="ic">✆</div>
+        <div class="t"><span class="lbl">WhatsApp</span><span class="sm">Quick reply during business hours</span></div>
+      </a>
+      <a href="https://www.instagram.com/levisage_beautyclinic/" target="_blank" class="pill">
+        <div class="ic">@</div>
+        <div class="t"><span class="lbl">Instagram DM</span><span class="sm">@levisage_beautyclinic</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="brand-f">Le Visage<span>Beauty Clinic &amp; Spa · Limassol</span></div>
+    <div class="lines">Limassol, Cyprus · <a href="tel:+35797879486">+357 97 879 486</a></div>
+    <div class="copy">© Le Visage Beauty Clinic &amp; Spa. Care for the face — and the moments around it.</div>
+  </div>
+</footer>
+
+</body>
+</html>
