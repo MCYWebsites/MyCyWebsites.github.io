@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blissful Beauty Clinic — Limassol | A Calm Space for Beauty &amp; Skin Care</title>
+<meta name="description" content="Blissful Beauty Clinic — a calm, considered beauty space in Limassol for facial care, body treatments, and a quiet hour to yourself.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --lavender:#b8a8c8;
+    --lavender-deep:#7c6a90;
+    --plum:#5a4865;
+    --blush:#f0e3e8;
+    --cream:#fbf7f3;
+    --warm:#fcfaf6;
+    --ink:#2a212e;
+    --muted:#7a6f7a;
+    --line:#e8dee5;
+    --gold:#c4a574;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Outfit',sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;font-weight:400}
+  h1,h2,h3,.serif{font-family:'Cormorant',serif;font-weight:500;letter-spacing:-0.005em}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--lavender-deep);font-weight:500;margin-bottom:18px}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(251,247,243,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;max-width:1180px;margin:0 auto}
+  .brand{font-family:'Cormorant',serif;font-size:1.5rem;color:var(--plum);font-weight:500;display:flex;align-items:baseline;gap:8px}
+  .brand .leaf{color:var(--lavender);font-size:1.2rem}
+  .nav-links{display:flex;gap:34px;font-size:.88rem;color:var(--ink)}
+  .nav-links a:hover{color:var(--lavender-deep)}
+  .nav-cta{background:var(--plum);color:var(--cream);padding:11px 24px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border-radius:30px;transition:background .25s}
+  .nav-cta:hover{background:var(--lavender-deep)}
+  @media(max-width:780px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:170px 0 130px;position:relative;overflow:hidden;text-align:center;background:linear-gradient(180deg,var(--cream) 0%,var(--blush) 100%)}
+  .hero::before{content:"";position:absolute;top:140px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(184,168,200,.18),transparent 60%);border-radius:50%;z-index:0}
+  .hero .container{position:relative;z-index:2}
+  .hero .ornament{display:flex;align-items:center;justify-content:center;gap:18px;color:var(--gold);margin-bottom:24px}
+  .hero .ornament::before,.hero .ornament::after{content:"";width:50px;height:1px;background:var(--gold)}
+  .hero .ornament .o{font-family:'Cormorant',serif;font-style:italic;font-size:1.4rem}
+  .hero h1{font-size:5rem;line-height:1.05;color:var(--plum);margin-bottom:30px;max-width:840px;margin-left:auto;margin-right:auto}
+  .hero h1 em{font-style:italic;color:var(--lavender-deep);font-weight:400}
+  .hero p.lead{font-size:1.18rem;color:var(--muted);max-width:600px;margin:0 auto 44px;line-height:1.8}
+  .cta-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:center}
+  .btn-primary{background:var(--plum);color:var(--cream);padding:18px 36px;border-radius:40px;font-weight:500;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;transition:background .2s}
+  .btn-primary:hover{background:var(--lavender-deep)}
+  .btn-ghost{padding:18px 28px;font-weight:500;color:var(--plum);font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--lavender);border-radius:40px;transition:all .2s}
+  .btn-ghost:hover{background:var(--blush)}
+  @media(max-width:880px){.hero h1{font-size:2.7rem}.hero{padding:140px 0 90px}}
+
+  /* PROMISE */
+  .promise{background:var(--warm);padding:70px 0;border-bottom:1px solid var(--line)}
+  .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;text-align:center}
+  .p-item{padding:0 10px}
+  .p-item .num{font-family:'Cormorant',serif;font-style:italic;color:var(--gold);font-size:1.4rem;margin-bottom:14px}
+  .p-item h3{font-family:'Outfit',sans-serif;font-size:.95rem;color:var(--plum);margin-bottom:10px;text-transform:uppercase;letter-spacing:.18em;font-weight:600}
+  .p-item p{color:var(--muted);font-size:.92rem;line-height:1.7}
+  @media(max-width:780px){.promise-grid{grid-template-columns:1fr;gap:30px}}
+
+  /* SECTIONS */
+  section{padding:110px 0}
+  .section-header{text-align:center;max-width:680px;margin:0 auto 70px}
+  .section-header h2{font-size:3rem;color:var(--plum);margin-bottom:20px;line-height:1.15}
+  .section-header h2 em{font-style:italic;color:var(--lavender-deep)}
+  .section-header p{color:var(--muted);font-size:1.05rem;line-height:1.75}
+
+  /* SERVICES */
+  .services{background:var(--cream)}
+  .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+  .service{background:var(--warm);padding:48px 40px;border-radius:8px;border:1px solid var(--line);text-align:left;transition:transform .25s,border-color .25s}
+  .service:hover{transform:translateY(-4px);border-color:var(--lavender)}
+  .service .ic{width:54px;height:54px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;color:var(--plum);font-family:'Cormorant',serif;font-style:italic;font-size:1.4rem;margin-bottom:22px}
+  .service h3{font-size:1.55rem;color:var(--plum);margin-bottom:12px}
+  .service p{color:var(--muted);font-size:.95rem;line-height:1.75}
+  @media(max-width:780px){.service-grid{grid-template-columns:1fr}}
+
+  /* QUOTE */
+  .quote-section{background:var(--plum);color:var(--cream);text-align:center}
+  .quote-section .container{max-width:780px}
+  .quote-section .ornament{color:var(--gold);font-family:'Cormorant',serif;font-style:italic;font-size:1.4rem;margin-bottom:30px}
+  .quote-section .q{font-family:'Cormorant',serif;font-size:2.4rem;line-height:1.3;color:var(--cream);font-style:italic;margin-bottom:30px}
+  .quote-section .by{font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lavender)}
+
+  /* WELCOME */
+  .welcome{background:var(--blush)}
+  .welcome .container{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+  .welcome .visual{aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--lavender),var(--plum));position:relative;display:flex;align-items:center;justify-content:center;max-width:400px;margin:0 auto}
+  .welcome .visual::before{content:"";position:absolute;inset:-20px;border:1px dashed var(--gold);border-radius:50%;opacity:.6}
+  .welcome .visual .mono{font-family:'Cormorant',serif;font-style:italic;font-size:9rem;color:rgba(251,247,243,.85);font-weight:400;line-height:1}
+  .welcome h2{font-size:2.8rem;color:var(--plum);margin-bottom:24px;line-height:1.15}
+  .welcome h2 em{color:var(--lavender-deep);font-style:italic}
+  .welcome p{color:var(--muted);font-size:1.05rem;line-height:1.85;margin-bottom:18px}
+  @media(max-width:880px){.welcome .container{grid-template-columns:1fr;gap:50px}}
+
+  /* CONTACT */
+  .contact{background:var(--cream);text-align:center}
+  .contact .container{max-width:780px}
+  .contact h2{font-size:3rem;color:var(--plum);margin-bottom:20px;line-height:1.15}
+  .contact h2 em{font-style:italic;color:var(--lavender-deep)}
+  .contact > .container > p{color:var(--muted);font-size:1.05rem;line-height:1.75;margin-bottom:50px;max-width:560px;margin-left:auto;margin-right:auto}
+  .reach{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:30px}
+  .reach-card{background:var(--warm);padding:38px 32px;border-radius:14px;border:1px solid var(--line);text-align:center;transition:all .2s}
+  .reach-card:hover{border-color:var(--lavender);transform:translateY(-3px)}
+  .reach-card .ic{width:54px;height:54px;border-radius:50%;background:var(--blush);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;color:var(--plum);font-family:'Cormorant',serif;font-style:italic;font-size:1.5rem}
+  .reach-card .lbl{font-family:'Cormorant',serif;font-size:1.4rem;color:var(--plum);margin-bottom:6px}
+  .reach-card .sm{color:var(--muted);font-size:.86rem}
+  @media(max-width:780px){.reach{grid-template-columns:1fr}}
+  .small-note{margin-top:30px;color:var(--muted);font-size:.92rem;font-style:italic}
+  .small-note a{color:var(--plum);border-bottom:1px solid var(--lavender);padding-bottom:1px}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:var(--cream);padding:70px 0 30px;text-align:center}
+  footer .ornament{color:var(--gold);margin-bottom:18px;font-family:'Cormorant',serif;font-style:italic;font-size:1.2rem}
+  footer .brand-f{font-family:'Cormorant',serif;font-size:2rem;color:var(--cream);font-weight:500}
+  footer .brand-f span{display:block;font-family:'Outfit',sans-serif;font-size:.65rem;letter-spacing:.45em;color:var(--lavender);font-weight:500;margin-top:8px;text-transform:uppercase}
+  footer .lines{margin-top:24px;color:rgba(251,247,243,.6);font-size:.88rem}
+  footer .lines a{color:var(--lavender)}
+  .copy{margin-top:50px;padding-top:25px;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;opacity:.5}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-row">
+    <div class="brand"><span class="leaf">❋</span>Blissful Beauty Clinic</div>
+    <div class="nav-links">
+      <a href="#services">Treatments</a>
+      <a href="#welcome">About</a>
+      <a href="#contact">Visit</a>
+    </div>
+    <a href="#contact" class="nav-cta">Reserve</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="ornament"><span class="o">❋</span></div>
+    <div class="eyebrow">A Beauty Clinic in Limassol</div>
+    <h1>Step inside. Slow <em>down</em>. Look after yourself.</h1>
+    <p class="lead">Blissful Beauty Clinic was built for the simple idea that beauty care should feel like a quiet hour for yourself — not a transaction. Considered treatments, gentle hands, calm rooms.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn-primary">Reserve Your Hour</a>
+      <a href="https://www.facebook.com/people/Blissful-Beauty-Clinic/100080391662368/" target="_blank" class="btn-ghost">Visit on Facebook</a>
+    </div>
+  </div>
+</header>
+
+<div class="promise">
+  <div class="container">
+    <div class="promise-grid">
+      <div class="p-item">
+        <div class="num">i.</div>
+        <h3>Calm Rooms</h3>
+        <p>Quiet, private treatment spaces — designed for a real moment of rest, not a rushed appointment.</p>
+      </div>
+      <div class="p-item">
+        <div class="num">ii.</div>
+        <h3>Personal Care</h3>
+        <p>Every visit begins with a proper conversation. Your treatment is matched to your skin and your day.</p>
+      </div>
+      <div class="p-item">
+        <div class="num">iii.</div>
+        <h3>Honest Approach</h3>
+        <p>If a treatment isn't right for you, we'll say so. We'd rather earn your trust than make a sale.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow" style="text-align:center">Our Treatments</div>
+      <h2>Considered care for skin &amp; <em>body</em>.</h2>
+      <p>A focused selection of treatments — done well, refined over time, and matched to what you actually need.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service">
+        <div class="ic">i</div>
+        <h3>Signature Facials</h3>
+        <p>Personalised facial protocols for cleansing, hydration, and renewal. Calm, methodical, and restorative.</p>
+      </div>
+      <div class="service">
+        <div class="ic">ii</div>
+        <h3>Skin Care &amp; Diagnostics</h3>
+        <p>Skin analysis sessions to understand what's actually happening with your skin — so the plan addresses the cause.</p>
+      </div>
+      <div class="service">
+        <div class="ic">iii</div>
+        <h3>Body Treatments</h3>
+        <p>Restorative body protocols for relaxation and renewal — performed with the same considered approach as the face.</p>
+      </div>
+      <div class="service">
+        <div class="ic">iv</div>
+        <h3>Beauty Care</h3>
+        <p>Brow shaping, lash care, and the small details that pull a whole look together — without ever feeling like a production line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="container">
+    <div class="ornament">❋</div>
+    <div class="q">"A small, calm space for the kind of care that's increasingly hard to find."</div>
+    <div class="by">— Blissful Beauty Clinic</div>
+  </div>
+</section>
+
+<section class="welcome" id="welcome">
+  <div class="container">
+    <div class="visual"><div class="mono">B</div></div>
+    <div>
+      <div class="eyebrow">About the Clinic</div>
+      <h2>A small Limassol clinic, built for <em>regulars</em>.</h2>
+      <p>Blissful Beauty Clinic was built around one belief — that beauty care, done properly, is a kindness. To your skin, to your day, and to yourself.</p>
+      <p>We keep our rooms quiet, our diary generous, and our treatments matched carefully to the person in front of us. The result is a clinic that feels less like an appointment and more like an hour you give yourself.</p>
+      <p>Most of our work comes from people who've been before — and bring someone with them next time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="eyebrow">Reserve a Treatment</div>
+    <h2>Reach us — and reserve your <em>hour</em>.</h2>
+    <p>We answer every message ourselves during clinic hours. The easiest way to reserve is a quick message on Facebook — you'll get a personal reply.</p>
+
+    <div class="reach">
+      <a href="https://www.facebook.com/people/Blissful-Beauty-Clinic/100080391662368/" target="_blank" class="reach-card">
+        <div class="ic">f</div>
+        <div class="lbl">Message on Facebook</div>
+        <div class="sm">Quickest reply during clinic hours</div>
+      </a>
+      <a href="https://www.google.com/maps/search/Blissful+Beauty+Clinic+Limassol" target="_blank" class="reach-card">
+        <div class="ic">⊕</div>
+        <div class="lbl">Find us in Limassol</div>
+        <div class="sm">Open in Google Maps</div>
+      </a>
+    </div>
+
+    <div class="small-note">Prefer email or phone? Get in touch via <a href="https://www.facebook.com/people/Blissful-Beauty-Clinic/100080391662368/" target="_blank">our Facebook page</a> and we'll share the best contact for your treatment.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ornament">❋</div>
+    <div class="brand-f">Blissful Beauty Clinic<span>Limassol · Cyprus</span></div>
+    <div class="lines">A calm hour for skin, body, and the time you give yourself.</div>
+    <div class="copy">© Blissful Beauty Clinic. Considered beauty care in Limassol.</div>
+  </div>
+</footer>
+
+</body>
+</html>
