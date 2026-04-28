@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bon Art Salon | Κομμωτήριο στον Στρόβολο</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --warm: #2d2018;
+    --gold: #b8935a;
+    --gold-light: #d4ae7a;
+    --blush: #f5ede4;
+    --cream: #faf7f3;
+    --white: #ffffff;
+    --text-mid: #5a4a3a;
+    --text-light: #8a7a6a;
+    --border: rgba(184,147,90,0.2);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    background: rgba(250,247,243,0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-brand span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 500; color: var(--warm);
+    border: 1px solid var(--gold); padding: 0.55rem 1.5rem;
+    text-decoration: none; transition: all 0.25s;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--white); }
+  @media (max-width: 768px) { .nav-links { display: none; } nav { padding: 1rem 1.5rem; } }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative; overflow: hidden;
+  }
+  @media (max-width: 768px) { .hero { grid-template-columns: 1fr; } }
+  .hero-text-col {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 3rem 4rem 4rem;
+    position: relative; z-index: 1;
+  }
+  @media (max-width: 768px) { .hero-text-col { padding: 7rem 1.5rem 3rem; } }
+  .hero-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+    animation: fadeIn 0.8s ease both;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 40px; height: 1px; background: var(--gold);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 300; line-height: 1.0;
+    letter-spacing: -0.01em; color: var(--ink);
+    margin-bottom: 1.75rem;
+    animation: fadeIn 0.8s 0.1s ease both;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); display: block; }
+  .hero-desc {
+    font-size: 0.95rem; line-height: 1.8; color: var(--text-mid);
+    font-weight: 300; max-width: 380px; margin-bottom: 2.5rem;
+    animation: fadeIn 0.8s 0.2s ease both;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; animation: fadeIn 0.8s 0.3s ease both; }
+  .btn-gold {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--gold); color: var(--white);
+    padding: 0.9rem 2.25rem; font-size: 0.8rem;
+    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+    text-decoration: none; transition: all 0.25s;
+  }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--ink);
+    padding: 0.9rem 2rem; font-size: 0.8rem;
+    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+    text-decoration: none; border: 1px solid rgba(26,20,16,0.25);
+    transition: all 0.25s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-trust {
+    margin-top: 3rem; padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex; gap: 2.5rem;
+    animation: fadeIn 0.8s 0.4s ease both;
+  }
+  .trust-item { }
+  .trust-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300; color: var(--gold); line-height: 1;
+  }
+  .trust-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-top: 0.2rem; }
+  .hero-visual-col {
+    position: relative; overflow: hidden;
+    background: var(--ink);
+  }
+  @media (max-width: 768px) { .hero-visual-col { min-height: 300px; order: -1; } }
+  .hero-visual-pattern {
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent, transparent 40px,
+        rgba(184,147,90,0.04) 40px, rgba(184,147,90,0.04) 41px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent, transparent 40px,
+        rgba(184,147,90,0.04) 40px, rgba(184,147,90,0.04) 41px
+      ),
+      linear-gradient(160deg, #2d2018 0%, #1a1410 100%);
+  }
+  .hero-visual-content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 3rem;
+  }
+  .salon-monogram {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(5rem, 12vw, 10rem);
+    font-weight: 300; color: transparent;
+    -webkit-text-stroke: 1px rgba(184,147,90,0.4);
+    line-height: 1; letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+  }
+  .salon-tagline-visual {
+    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: rgba(184,147,90,0.6);
+  }
+  .hero-visual-decor {
+    position: absolute; inset: 2rem;
+    border: 1px solid rgba(184,147,90,0.12);
+    pointer-events: none;
+  }
+  .hero-visual-decor::before {
+    content: ''; position: absolute; inset: 1rem;
+    border: 1px solid rgba(184,147,90,0.06);
+  }
+
+  /* SECTION BASE */
+  section { padding: 6rem 2.5rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .section-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 300; line-height: 1.1; color: var(--ink);
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  /* SERVICES */
+  .services { background: var(--white); }
+  .services-header { margin-bottom: 4rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-item {
+    padding: 2.5rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .service-item:nth-child(3n) { border-right: none; }
+  .service-item:hover { background: var(--blush); }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300;
+    color: rgba(184,147,90,0.15); line-height: 1;
+    position: absolute; top: 1rem; right: 1.5rem;
+  }
+  .service-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+  .service-item p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
+
+  /* ABOUT */
+  .about { background: var(--ink); color: var(--cream); }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  @media (max-width: 768px) { .about-inner { grid-template-columns: 1fr; gap: 3rem; } }
+  .about-visual {
+    aspect-ratio: 3/4;
+    background: var(--warm);
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-visual-inner {
+    text-align: center;
+  }
+  .about-icon { font-size: 3.5rem; margin-bottom: 1rem; opacity: 0.6; }
+  .about-visual-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(184,147,90,0.5);
+  }
+  .about-visual-badge {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    background: var(--gold); color: var(--white);
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300; line-height: 1;
+  }
+  .badge-text { font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.9; }
+  .about-text .section-eyebrow { color: var(--gold-light); }
+  .about-text .section-eyebrow::before { background: var(--gold-light); }
+  .about-text .section-title { color: var(--cream); margin-bottom: 1.5rem; }
+  .about-body { font-size: 0.9rem; color: rgba(250,247,243,0.65); line-height: 1.9; font-weight: 300; margin-bottom: 1.25rem; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+  .about-tag {
+    border: 1px solid rgba(184,147,90,0.3); color: var(--gold-light);
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+  }
+
+  /* WHY */
+  .why { background: var(--blush); }
+  .why-header { margin-bottom: 3.5rem; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+  .why-card {
+    background: var(--white);
+    padding: 2rem; position: relative;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .why-card:hover { border-bottom-color: var(--gold); transform: translateY(-3px); }
+  .why-card-icon { font-size: 1.5rem; margin-bottom: 1.25rem; }
+  .why-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--ink);
+  }
+  .why-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
+
+  /* CONTACT */
+  .contact { background: var(--cream); }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  @media (max-width: 768px) { .contact-inner { grid-template-columns: 1fr; gap: 3rem; } }
+  .contact-text .section-title { margin-bottom: 1rem; }
+  .contact-text > p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
+  .contact-methods { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .contact-method {
+    display: flex; align-items: center; gap: 1.25rem;
+    text-decoration: none; color: var(--ink);
+    background: var(--white); padding: 1.25rem 1.5rem;
+    transition: background 0.2s;
+  }
+  .contact-method:hover { background: var(--blush); }
+  .method-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--blush);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+  .method-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); }
+  .method-value { font-size: 0.95rem; color: var(--ink); margin-top: 0.1rem; }
+  .contact-card {
+    background: var(--ink); padding: 3rem;
+    position: relative; overflow: hidden;
+  }
+  .contact-card::before {
+    content: 'BA';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem; font-weight: 300;
+    color: rgba(184,147,90,0.08);
+    position: absolute; bottom: -1rem; right: 0.5rem;
+    line-height: 1; letter-spacing: -0.05em;
+    pointer-events: none;
+  }
+  .card-eyebrow {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300; line-height: 1.2;
+    color: var(--cream); margin-bottom: 0.75rem;
+  }
+  .card-body { font-size: 0.85rem; color: rgba(250,247,243,0.6); line-height: 1.7; margin-bottom: 2rem; font-weight: 300; }
+  .card-actions { display: flex; flex-direction: column; gap: 0.75rem; position: relative; z-index: 1; }
+  .card-btn {
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    text-decoration: none; font-size: 0.78rem;
+    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+    padding: 0.9rem; transition: all 0.25s;
+  }
+  .card-btn.primary { background: var(--gold); color: var(--white); }
+  .card-btn.primary:hover { background: var(--gold-light); }
+  .card-btn.secondary { border: 1px solid rgba(184,147,90,0.4); color: var(--gold-light); }
+  .card-btn.secondary:hover { border-color: var(--gold); background: rgba(184,147,90,0.08); }
+
+  /* FOOTER */
+  footer {
+    background: var(--warm); padding: 2rem 2.5rem;
+    border-top: 1px solid rgba(184,147,90,0.2);
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--cream);
+  }
+  .footer-brand span { color: var(--gold); }
+  .footer-info { font-size: 0.78rem; color: rgba(250,247,243,0.4); text-align: right; line-height: 1.7; }
+  @media (max-width: 600px) { .footer-info { text-align: left; } .footer-inner { flex-direction: column; align-items: flex-start; } }
+
+  /* FLOAT BAR */
+  .float-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; display: none; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 768px) { .float-bar { display: grid; } body { padding-bottom: 56px; } section { padding: 4rem 1.5rem; } }
+  .float-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; text-decoration: none; color: var(--white); transition: filter 0.2s; }
+  .float-btn.call { background: var(--gold); }
+  .float-btn.whatsapp { background: #25d366; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">Bon<span>Art</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Υπηρεσίες</a></li>
+    <li><a href="#about">Ποιοι Είμαστε</a></li>
+    <li><a href="#contact">Επικοινωνία</a></li>
+  </ul>
+  <a href="tel:+35722250459" class="nav-cta">Κλείστε Ραντεβού</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-text-col">
+    <div class="hero-eyebrow">Κομμωτήριο · Στρόβολος, Λευκωσία</div>
+    <h1>
+      Η τέχνη
+      <em>στα μαλλιά</em>
+      σας.
+    </h1>
+    <p class="hero-desc">
+      Βαφή, κόψιμο και χτένισμα από έμπειρους κομμωτές στον Στρόβολο. Φροντίδα που φαίνεται — αποτελέσματα που διαρκούν.
+    </p>
+    <div class="hero-actions">
+      <a href="tel:+35722250459" class="btn-gold">📞 Κλείστε Ραντεβού</a>
+      <a href="https://wa.me/35722250459" class="btn-outline" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="trust-num">Στρόβολος</div>
+        <div class="trust-label">3Β Καντάρα, Λευκωσία</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">22 250 459</div>
+        <div class="trust-label">Τηλέφωνο</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual-col">
+    <div class="hero-visual-pattern"></div>
+    <div class="hero-visual-decor"></div>
+    <div class="hero-visual-content">
+      <div class="salon-monogram">BA</div>
+      <div class="salon-tagline-visual">Bon Art · Salon</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-eyebrow">Τι Προσφέρουμε</div>
+      <div class="section-title">Οι <em>Υπηρεσίες</em> Μας</div>
+    </div>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <h3>Βαφή & Χρώμα</h3>
+        <p>Από μονόχρωμη βαφή μέχρι balayage και ombre — ζωντανά χρώματα που κρατούν τη λάμψη τους.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <h3>Κόψιμο & Φορμάρισμα</h3>
+        <p>Κόψιμο προσαρμοσμένο στο πρόσωπό σας, στο τύπο των μαλλιών σας και στον τρόπο ζωής σας.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <h3>Χτένισμα & Styling</h3>
+        <p>Επαγγελματικό χτένισμα για κάθε περίσταση — καθημερινό ή για ειδική εκδήλωση.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <h3>Θεραπείες Μαλλιών</h3>
+        <p>Εντατική ενυδάτωση και αναδόμηση για κατεστραμμένα ή αδύναμα μαλλιά.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">05</div>
+        <h3>Ανδρικό Κούρεμα</h3>
+        <p>Κλασικό ή σύγχρονο κούρεμα — γρήγορα, καθαρά και σωστά.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">06</div>
+        <h3>Νυφικό & Εορταστικό</h3>
+        <p>Ειδικά χτενίσματα για τις πιο σημαντικές στιγμές της ζωής σας.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="about-visual-inner">
+          <div class="about-icon">✂️</div>
+          <div class="about-visual-text">Bon Art Salon</div>
+        </div>
+        <div class="about-visual-badge">
+          <div class="badge-num">★★★★★</div>
+          <div class="badge-text">Στον Στρόβολο</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-eyebrow">Το Κομμωτήριό Μας</div>
+        <div class="section-title">Εμπειρία &<br><em>Φροντίδα</em></div>
+        <p class="about-body">
+          Το Bon Art Salon βρίσκεται στον Στρόβολο εδώ και χρόνια. Έχουμε χτίσει την πελατεία μας με τη δουλειά μας — κάθε πελάτης που φεύγει ικανοποιημένος είναι η καλύτερη διαφήμιση.
+        </p>
+        <p class="about-body">
+          Είμαστε ειδικοί στη βαφή, το κόψιμο και το χτένισμα. Δουλεύουμε με επαγγελματικά προϊόντα και δίνουμε χρόνο στον κάθε πελάτη — δεν βιαζόμαστε όταν πρόκειται για τα μαλλιά σας.
+        </p>
+        <div class="about-tags">
+          <span class="about-tag">Έμπειροι Κομμωτές</span>
+          <span class="about-tag">Επαγγελματικά Προϊόντα</span>
+          <span class="about-tag">Στρόβολος</span>
+          <span class="about-tag">Ραντεβού & Αυθόρμητη Επίσκεψη</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <div class="why-header">
+      <div class="section-eyebrow">Γιατί Εμάς</div>
+      <div class="section-title">Αυτό που <em>Μετράει</em></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon">💬</div>
+        <h3>Σας Ακούμε</h3>
+        <p>Πριν από κάθε εργασία, μιλάμε μαζί σας για να καταλάβουμε ακριβώς τι θέλετε.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">✨</div>
+        <h3>Ποιοτικά Αποτελέσματα</h3>
+        <p>Δεν κάνουμε εκπτώσεις στην ποιότητα — από τα προϊόντα που χρησιμοποιούμε μέχρι το τελικό αποτέλεσμα.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">📍</div>
+        <h3>Κεντρικά στον Στρόβολο</h3>
+        <p>Εύκολη πρόσβαση από όλη τη Λευκωσία — αντίστοιχη θέση, χώρος στάθμευσης κοντά.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🤝</div>
+        <h3>Πελάτες για Χρόνια</h3>
+        <p>Οι περισσότεροι πελάτες μας έρχονται ξανά και ξανά. Αυτό λέει τα πάντα.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <div class="section-eyebrow">Επικοινωνία</div>
+        <div class="section-title">Κλείστε το<br><em>Ραντεβού σας</em></div>
+        <p>Καλέστε μας ή στείλτε WhatsApp για να κλείσετε ραντεβού. Δεχόμαστε και αυθόρμητες επισκέψεις ανάλογα με τη διαθεσιμότητα.</p>
+        <div class="contact-methods">
+          <a href="tel:+35722250459" class="contact-method">
+            <div class="method-icon">📞</div>
+            <div>
+              <div class="method-label">Τηλέφωνο</div>
+              <div class="method-value">22 250 459</div>
+            </div>
+          </a>
+          <a href="https://wa.me/35722250459" class="contact-method" target="_blank" rel="noopener">
+            <div class="method-icon">💬</div>
+            <div>
+              <div class="method-label">WhatsApp</div>
+              <div class="method-value">Στείλτε μήνυμα</div>
+            </div>
+          </a>
+          <div class="contact-method" style="cursor:default;">
+            <div class="method-icon">📍</div>
+            <div>
+              <div class="method-label">Διεύθυνση</div>
+              <div class="method-value" style="font-size:0.88rem;">3Β Καντάρα, Στρόβολος 2042, Λευκωσία</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="card-eyebrow">Bon Art Salon</div>
+        <div class="card-title">Έτοιμοι<br>για εσάς.</div>
+        <p class="card-body">Κλείστε το ραντεβού σας σήμερα — μια κλήση ή ένα μήνυμα αρκεί.</p>
+        <div class="card-actions">
+          <a href="tel:+35722250459" class="card-btn primary">📞 Καλέστε Τώρα</a>
+          <a href="https://wa.me/35722250459" class="card-btn secondary" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Bon<span>Art</span> Salon</div>
+    <div class="footer-info">
+      3Β Καντάρα, Στρόβολος 2042, Λευκωσία<br>
+      22 250 459<br>
+      <span style="opacity:0.4;">Κομμωτήριο στη Λευκωσία</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE FLOAT BAR -->
+<div class="float-bar">
+  <a href="tel:+35722250459" class="float-btn call">📞 Κλείστε Ραντεβού</a>
+  <a href="https://wa.me/35722250459" class="float-btn whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+</div>
+
+</body>
+</html>
